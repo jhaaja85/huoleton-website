@@ -13,6 +13,7 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await cp(join(root, 'src/assets'), join(dist, 'assets'), { recursive: true });
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
+await cp(join(root, 'CNAME'), join(dist, 'CNAME')).catch(() => {});
 await cp(join(root, 'src/assets/favicon.ico'), join(dist, 'favicon.ico'));
 
 const enabled = Object.entries(site.locales).filter(([, l]) => l.enabled).map(([code]) => code);

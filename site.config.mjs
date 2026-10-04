@@ -1,6 +1,6 @@
 // Site-wide, language-independent settings.
 export const site = {
-  origin: 'https://jhaaja85.github.io/huoleton-website', // update if a custom domain is added
+  origin: 'https://huoleton.org',
   defaultLocale: 'fi',
   // Add a locale here and enable it once src/content/<code>.json is complete.
   locales: {
