@@ -74,9 +74,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero { padding: 44px 0 56px; }
 .hero__grid { display: grid; gap: 40px; align-items: center; }
 h1 { font-size: clamp(2.5rem, 7.4vw, 4.25rem); letter-spacing: -.035em; color: var(--green); margin-bottom: 20px; }
-.hero__stage { padding: 40px 12px 32px; gap: 0; align-items: flex-start; }
-.hero__stage .phone--front { max-width: 52%; position: relative; z-index: 2; margin-right: -4%; }
-.hero__stage .phone--back { max-width: 46%; margin-top: 44px; position: relative; z-index: 1; }
+.hero__stage { padding: 40px 20px; }
+.hero__stage .phone--front { max-width: 270px; }
 
 /* Steps */
 .steps { padding: 8px 0 64px; }

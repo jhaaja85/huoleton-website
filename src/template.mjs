@@ -127,7 +127,6 @@ ${alternates}
       </div>
       <div class="hero__visual">
         <div class="stage stage--sand hero__stage">
-          ${phone('app-tilastot', 823, 1795, t.hero.imageAlt2, 'phone--back')}
           ${phone('app-koti', 598, 1239, t.hero.imageAlt, 'phone--front')}
         </div>
       </div>

@@ -49,8 +49,7 @@
     "eyebrow": "Kodin huoltokirja",
     "title": "Kotisi huolto. Huolettomasti.",
     "lead": "Huoleton kertoo mitä kotisi tarvitsee ja milloin. Huollot, muistutukset, kustannukset, laitteet ja dokumentit yhdessä paikassa.",
-    "imageAlt": "Huoleton-sovelluksen etusivu: avoimet huollot, tulossa olevat tehtävät ja koko huoltolista.",
-    "imageAlt2": "Huoleton-sovelluksen tilastot: toteutuneet ja suunnitellut kustannukset vuosittain."
+    "imageAlt": "Huoleton-sovelluksen etusivu: avoimet huollot, tulossa olevat tehtävät ja koko huoltolista."
   },
   "steps": {
     "title": "Suunnittele, muista, dokumentoi, seuraa",
