@@ -5,7 +5,7 @@ export const site = {
   // false: store buttons are replaced with a "coming soon" notice. Set true on release day.
   launched: false,
   // Google Analytics 4 measurement ID (G-XXXXXXXXXX). null = no analytics and no cookie banner.
-  analytics: { gaId: null },
+  analytics: { gaId: 'G-SJ40J76138' },
   // Add a locale here and enable it once src/content/<code>.json is complete.
   locales: {
     fi: { enabled: true, label: 'Suomi', ogLocale: 'fi_FI' },
