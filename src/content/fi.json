@@ -1,0 +1,180 @@
+{
+  "lang": "fi",
+  "meta": {
+    "title": "Huoleton – Kodin huoltokirja",
+    "description": "Huoleton kertoo mitä kotisi tarvitsee ja milloin. Huoltosuunnitelma, muistutukset, huoltohistoria, kustannukset ja dokumentit yhdessä paikassa.",
+    "ogAlt": "Huoleton – Kodin huoltokirja Android-puhelimella"
+  },
+  "nav": {
+    "label": "Päävalikko",
+    "skip": "Siirry sisältöön",
+    "features": "Ominaisuudet",
+    "why": "Miksi huoltokirja",
+    "download": "Lataa",
+    "languageLabel": "Kieli"
+  },
+  "brand": {
+    "name": "Huoleton",
+    "tagline": "Kodin huoltokirja",
+    "logoAlt": "Huoleton-sovelluksen logo"
+  },
+  "stores": {
+    "googlePlay": {
+      "small": "Saatavilla",
+      "name": "Google Play",
+      "aria": "Lataa Huoleton Google Playsta"
+    },
+    "appStore": {
+      "small": "Lataa",
+      "name": "App Store",
+      "aria": "Lataa Huoleton App Storesta"
+    },
+    "note": "Android-puhelimille. Toimii ilman tiliä ja ilman verkkoyhteyttä."
+  },
+  "hero": {
+    "eyebrow": "Kodin huoltokirja",
+    "title": "Kotisi huolto. Huolettomasti.",
+    "lead": "Huoleton kertoo mitä kotisi tarvitsee ja milloin. Huollot, muistutukset, kustannukset, laitteet ja dokumentit yhdessä paikassa.",
+    "imageAlt": "Huoleton-sovelluksen etusivu: avoimet huollot, tulossa olevat tehtävät ja koko huoltolista.",
+    "imageAlt2": "Huoleton-sovelluksen tilastot: toteutuneet ja suunnitellut kustannukset vuosittain."
+  },
+  "steps": {
+    "title": "Suunnittele, muista, dokumentoi, seuraa",
+    "items": [
+      { "n": "1", "name": "Suunnittele", "text": "Huoltosuunnitelma talosi tietojen mukaan." },
+      { "n": "2", "name": "Muista", "text": "Huolto nousee esiin silloin, kun sen aika on." },
+      { "n": "3", "name": "Dokumentoi", "text": "Tehty työ, kustannus, kuitti ja kuva talteen." },
+      { "n": "4", "name": "Seuraa", "text": "Mittaukset, kustannukset ja tulevat menot näkyvissä." }
+    ]
+  },
+  "plan": {
+    "step": "1 · Suunnittele",
+    "title": "Huoltosuunnitelma syntyy talosi tietojen pohjalta",
+    "paragraphs": [
+      "Kerro talostasi perustiedot: rakennusvuosi, lämmitysmuoto, ilmanvaihto ja varusteet. Huoleton poimii valmiista huoltotehtävien katalogista ne, jotka koskevat juuri sinun kotiasi.",
+      "Tehtävällä on aikaikkuna, ei vain yksi päivämäärä. Rännit puhdistetaan syksyllä lehtien tippumisen jälkeen, ei tiettynä päivänä."
+    ],
+    "points": [
+      "Valmis katalogi lämmityksestä, ilmanvaihdosta, katosta, perustuksista, vesijärjestelmistä ja paloturvallisuudesta",
+      "Jokaisella tehtävällä lähdeviite, esimerkiksi Motiva tai pelastuslaki",
+      "Voit lisätä omia tehtäviä"
+    ],
+    "imageAlt": "Huoleton-sovelluksen esittelykuva: koti, Huoleton-logo ja sovelluksen etusivu puhelimessa."
+  },
+  "remind": {
+    "step": "2 · Muista",
+    "title": "Näet yhdellä silmäyksellä mitä on avoinna nyt",
+    "paragraphs": [
+      "Etusivu kokoaa yhteen sen, mikä vaatii huomiota tänään, mitä on tulossa ja mikä on myöhässä.",
+      "Huoleton muistuttaa ilmoituksella ajoissa. Valitset itse, mihin kellonaikaan muistutus tulee."
+    ],
+    "points": [
+      "Avoimet, tulossa olevat ja myöhässä olevat tehtävät omina kokonaisuuksinaan",
+      "Tehtävälista suodatettavissa: 1 kk, 6 kk, 1 v, 5 v tai kaikki",
+      "Muistutukset toimivat ilman verkkoyhteyttä"
+    ],
+    "imageAlt": "Huoleton-sovelluksen etusivu, jossa näkyvät avoimet huollot, tulossa olevat tehtävät ja aikavälisuodattimet."
+  },
+  "record": {
+    "step": "3 · Dokumentoi",
+    "title": "Pidä kirjaa tehdystä työstä",
+    "paragraphs": [
+      "Kun huolto on tehty, kuittaat sen parilla napautuksella. Kirjaat päivän, teitkö työn itse vai ammattilainen, kustannuksen ja muistiinpanon.",
+      "Lisää mukaan kuitit, kuvat ja PDF-tiedostot. Kaikki säilyvät samassa paikassa, siinä missä huolto itsekin."
+    ],
+    "points": [
+      "Päivämäärä, tekijä, kustannus ja muistiinpano",
+      "Liitteet: kuitit, valokuvat ja PDF:t",
+      "Virheen huomatessasi lisäät korjauksen – historiaa ei kirjoiteta uusiksi"
+    ],
+    "imageAlt": "Huoleton-sovelluksen kuittauslomake: tekopäivä, tekijä, kustannus, muistiinpano ja liitteet."
+  },
+  "track": {
+    "step": "4 · Seuraa",
+    "title": "Mittaukset ja kustannukset näkyvät yhdessä",
+    "paragraphs": [
+      "Seuraa toistuvia mittauksia, kuten vesimittarin lukemaa tai lattialämmitysverkon painetta, ja katso miten arvot muuttuvat ajan myötä.",
+      "Tilastoista näet, paljonko huollot ovat tähän mennessä maksaneet ja mihin kustannukset kohdistuvat."
+    ],
+    "points": [
+      "Mittaushistoria jokaiselle seurattavalle arvolle",
+      "Kustannukset jaoteltuina kategorioittain",
+      "Toteutuneet ja suunnitellut kulut samassa kaaviossa"
+    ],
+    "imageAlt": "Huoleton-sovelluksen tilastot: kustannuskaavio vuosittain, kustannukset kategorioittain ja mittaushistoria."
+  },
+  "pts": {
+    "step": "Pitkän aikavälin suunnittelu",
+    "title": "Tiedä tulevat huoltokulut ennen kuin ne realisoituvat",
+    "paragraphs": [
+      "PTS-suunnitelma listaa tulevat huollot vuosittain ryhmiteltynä: ilmanvaihtokoneen suodattimet, nuohous ja muut toistuvat menot.",
+      "Näet pitkän aikavälin kustannusarvion jo ennen kuin lasku tulee. Mukana ovat vain tehtävät, joille on annettu kustannusarvio."
+    ],
+    "points": [
+      "Tulevat huollot vuosittain, vuosikohtainen summa",
+      "Näet milloin vuosikohtaiset menot kasvavat",
+      "Ilmaiset omat työt löytyvät tavallisesta tehtävälistasta"
+    ],
+    "imageAlt": "Huoleton-sovelluksen PTS-suunnitelma: tulevat kustannukselliset huollot vuosittain ja vuosikohtaiset summat."
+  },
+  "features": {
+    "id": "ominaisuudet",
+    "title": "Kaikki kodin huoltoon yhdessä sovelluksessa",
+    "items": [
+      { "icon": "calendar", "name": "Automaattinen huoltosuunnitelma", "text": "Huoleton auttaa laatimaan kodillesi huoltoaikataulun." },
+      { "icon": "bell", "name": "Muistutukset", "text": "Tulevat huollot nousevat esiin oikeaan aikaan." },
+      { "icon": "check", "name": "Pidä kirjaa", "text": "Kirjaa tehdyt huollot, kustannukset, muistiinpanot ja tekijä." },
+      { "icon": "file", "name": "Dokumentit yhdessä paikassa", "text": "Valokuvat, kuitit, PDF:t ja muut huoltoon liittyvät tiedostot." },
+      { "icon": "gauge", "name": "Mittausseuranta", "text": "Vesimittarin lukemat ja lämmitysjärjestelmän arvot ajan mittaan." },
+      { "icon": "euro", "name": "Kustannusten seuranta ja PTS", "text": "Toteutuneet kulut ja tulevat huoltomenot samassa näkymässä." },
+      { "icon": "printer", "name": "Tulosta huoltologi", "text": "Huoltohistoria omiin papereihisi tai talon myynnin yhteyteen." }
+    ]
+  },
+  "why": {
+    "id": "miksi",
+    "eyebrow": "Miksi huoltokirja",
+    "title": "Hyvin hoidettu koti näkyy myös paperilla",
+    "lead": "Talo vaatii huoltoa koko elinkaarensa ajan. Kun tiedät mitä on tehty ja milloin, päätökset ovat helpompia.",
+    "items": [
+      { "name": "Pienet asiat eivät unohdu", "text": "Suodattimet, tarkastukset ja kausihuollot tulevat tehdyiksi ennen kuin niistä tulee isompi ongelma." },
+      { "name": "Tiedät mitä talossa on tehty", "text": "Kuka teki, milloin ja millä kustannuksella. Vastaus löytyy silloinkin, kun edellisestä kerrasta on vuosia." },
+      { "name": "Takuut ja kuitit löytyvät", "text": "Kun tarvitset kuittia tai laitteen tietoja, ne ovat siinä, missä huoltokin." },
+      { "name": "Talon myynti helpottuu", "text": "Selkeä huoltohistoria kertoo ostajalle, että kotia on hoidettu suunnitelmallisesti. Tulosta se tai vie PDF-tiedostona." }
+    ]
+  },
+  "data": {
+    "title": "Tietosi pysyvät sinulla",
+    "items": [
+      { "name": "Toimii ilman tiliä", "text": "Käytät sovellusta heti. Tiliä ei tarvita." },
+      { "name": "Toimii ilman verkkoa", "text": "Tiedot tallentuvat puhelimeesi." },
+      { "name": "Vie tiedot ulos", "text": "Koko huoltokirja JSON-tiedostona ja luettavana PDF-raporttina milloin tahansa." }
+    ]
+  },
+  "pro": {
+    "id": "pro",
+    "eyebrow": "Huoleton Pro",
+    "title": "Kun haluat huoltokirjan pilveen ja koko perheen käyttöön",
+    "lead": "Perusversio toimii ilman tiliä ja ilman verkkoa. Pro lisää valinnaisen pilvitallennuksen, jos tarvitset varmuuskopion tai käytät sovellusta useammalta laitteelta.",
+    "items": [
+      { "icon": "cloud", "name": "Varmuuskopio pilveen", "text": "Huoltokirjasi säilyy, vaikka puhelin vaihtuisi tai katoaisi." },
+      { "icon": "devices", "name": "Useampi laite", "text": "Sama huoltokirja puhelimessa ja muilla laitteillasi." },
+      { "icon": "people", "name": "Jaettu talous", "text": "Kutsu perheenjäsen mukaan kutsukoodilla, niin huollot ja kirjaukset näkyvät molemmille." },
+      { "icon": "lock", "name": "Salattu päästä päähän", "text": "Tiedot salataan laitteellasi ennen pilveen lähettämistä. Emme pysty lukemaan niitä." }
+    ],
+    "note": "Pro on valinnainen. Huoltokirjasi toimii ja on viennissä ulos myös ilman sitä."
+  },
+  "cta": {
+    "id": "lataa",
+    "title": "Aloita kotisi huoltokirja tänään",
+    "text": "Lataa Huoleton ja anna sovelluksen pitää kirjaa siitä, mitä kotisi tarvitsee."
+  },
+  "footer": {
+    "tagline": "Kodin huoltokirja",
+    "links": {
+      "privacy": "Tietosuojaseloste",
+      "deletion": "Tietojen ja tilin poisto",
+      "support": "Tuki ja yhteystiedot"
+    },
+    "copyright": "© 2026 Huoleton"
+  }
+}

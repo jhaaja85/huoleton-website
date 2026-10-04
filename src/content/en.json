@@ -1,0 +1,7 @@
+{
+  "_status": "Placeholder. English copy will be written separately; do not machine-translate fi.json. Same keys as fi.json. Enable the locale in site.config.mjs once complete.",
+  "lang": "en",
+  "meta": { "title": "", "description": "", "ogAlt": "" },
+  "nav": { "label": "", "features": "", "why": "", "download": "", "languageLabel": "" },
+  "brand": { "name": "Huoleton", "tagline": "", "logoAlt": "" }
+}
