@@ -30,6 +30,17 @@ function storeButtons(t, site, extraClass = '') {
   return `<div class="stores ${extraClass}">${out.join('')}</div>`;
 }
 
+function soonNotice(t, site, center) {
+  return `<div class="soon ${center ? 'soon--center' : ''}">
+    <span class="soon__badge">${esc(t.soon.badge)}</span>
+    <strong>${esc(t.soon.title)}</strong>
+    <span>${esc(t.soon.text)} <a href="${esc(site.links.support)}">${esc(t.soon.contact)}</a></span>
+  </div>`;
+}
+
+const launchedOr = (t, site, center) =>
+  site.launched ? storeButtons(t, site, center ? 'stores--center' : '') : soonNotice(t, site, center);
+
 function points(list) {
   return `<ul class="points">${list.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`;
 }
@@ -100,7 +111,7 @@ ${alternates}
       <a href="#${t.pro.id}">${esc(t.pro.eyebrow)}</a>
     </nav>
     ${switcher}
-    <a class="btn btn--small" href="#${t.cta.id}">${esc(t.nav.download)}</a>
+    <a class="btn btn--small" href="#${t.cta.id}">${esc(site.launched ? t.nav.download : t.soon.navLabel)}</a>
   </div>
 </header>
 
@@ -111,8 +122,8 @@ ${alternates}
         <p class="eyebrow">${esc(t.hero.eyebrow)}</p>
         <h1>${esc(t.hero.title)}</h1>
         <p class="lead">${esc(t.hero.lead)}</p>
-        ${storeButtons(t, site)}
-        <p class="note">${esc(t.stores.note)}</p>
+        ${launchedOr(t, site, false)}
+        ${site.launched ? `<p class="note">${esc(t.stores.note)}</p>` : ''}
       </div>
       <div class="hero__visual">
         <div class="stage stage--sand hero__stage">
@@ -199,9 +210,9 @@ ${alternates}
   <section class="cta" id="${t.cta.id}">
     <div class="container cta__inner">
       <img src="../assets/logo-180.png" width="88" height="88" alt="${esc(t.brand.logoAlt)}">
-      <h2>${esc(t.cta.title)}</h2>
-      <p>${esc(t.cta.text)}</p>
-      ${storeButtons(t, site, 'stores--center')}
+      <h2>${esc(site.launched ? t.cta.title : t.cta.soonTitle)}</h2>
+      <p>${esc(site.launched ? t.cta.text : t.cta.soonText)}</p>
+      ${launchedOr(t, site, true)}
     </div>
   </section>
 </main>
@@ -216,10 +227,20 @@ ${alternates}
       <a href="${esc(site.links.privacy)}">${esc(t.footer.links.privacy)}</a>
       <a href="${esc(site.links.deletion)}">${esc(t.footer.links.deletion)}</a>
       <a href="${esc(site.links.support)}">${esc(t.footer.links.support)}</a>
+      ${site.analytics.gaId ? `<button type="button" class="linklike" data-consent-open>${esc(t.consent.settings)}</button>` : ''}
     </nav>
     <p class="site-footer__copy">${esc(t.footer.copyright)}</p>
   </div>
 </footer>
+${site.analytics.gaId ? `<div class="consent" role="dialog" aria-labelledby="consent-title" hidden>
+  <strong id="consent-title">${esc(t.consent.title)}</strong>
+  <p>${esc(t.consent.text)}</p>
+  <div class="consent__btns">
+    <button type="button" class="btn btn--small" data-consent="granted">${esc(t.consent.accept)}</button>
+    <button type="button" class="btn btn--small btn--ghost" data-consent="denied">${esc(t.consent.decline)}</button>
+  </div>
+</div>
+<script src="../assets/consent.js" data-ga-id="${esc(site.analytics.gaId)}" defer></script>` : ''}
 </body>
 </html>
 `;

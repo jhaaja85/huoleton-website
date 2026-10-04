@@ -31,6 +31,20 @@
     },
     "note": "Android-puhelimille. Toimii ilman tiliä ja ilman verkkoyhteyttä."
   },
+  "soon": {
+    "badge": "Tulossa pian",
+    "title": "Tulossa Google Playhin lokakuussa",
+    "text": "Haluatko tiedon julkaisusta tai onko kysyttävää?",
+    "contact": "Ota yhteyttä",
+    "navLabel": "Tulossa"
+  },
+  "consent": {
+    "title": "Evästeet",
+    "text": "Käytämme Google Analyticsia sivuston kävijämäärien ymmärtämiseen. Analytiikka otetaan käyttöön vain suostumuksellasi.",
+    "accept": "Hyväksy",
+    "decline": "Vain välttämättömät",
+    "settings": "Evästeasetukset"
+  },
   "hero": {
     "eyebrow": "Kodin huoltokirja",
     "title": "Kotisi huolto. Huolettomasti.",
@@ -165,6 +179,8 @@
   },
   "cta": {
     "id": "lataa",
+    "soonTitle": "Huoleton on tulossa pian",
+    "soonText": "Sovellus julkaistaan Google Playssa lokakuussa. Ota yhteyttä, jos haluat tiedon heti kun se on ladattavissa.",
     "title": "Aloita kotisi huoltokirja tänään",
     "text": "Lataa Huoleton ja anna sovelluksen pitää kirjaa siitä, mitä kotisi tarvitsee."
   },
