@@ -1,9 +1,10 @@
 {
   "lang": "fi",
   "meta": {
-    "title": "Huoleton – Kodin huoltokirja",
+    "title": "Huoleton – Kodin huoltokirja ja huoltosuunnitelma",
     "description": "Huoleton kertoo mitä kotisi tarvitsee ja milloin. Huoltosuunnitelma, muistutukset, huoltohistoria, kustannukset ja dokumentit yhdessä paikassa.",
-    "ogAlt": "Huoleton – Kodin huoltokirja Android-puhelimella"
+    "ogAlt": "Huoleton – Kodin huoltokirja Android-puhelimella",
+    "appCategory": "LifestyleApplication"
   },
   "nav": {
     "label": "Päävalikko",
@@ -182,6 +183,11 @@
     "soonText": "Sovellus julkaistaan Google Playssa lokakuussa. Ota yhteyttä, jos haluat tiedon heti kun se on ladattavissa.",
     "title": "Aloita kotisi huoltokirja tänään",
     "text": "Lataa Huoleton ja anna sovelluksen pitää kirjaa siitä, mitä kotisi tarvitsee."
+  },
+  "notFound": {
+    "title": "Sivua ei löytynyt",
+    "text": "Hakemaasi sivua ei ole olemassa tai se on siirretty.",
+    "link": "Takaisin etusivulle"
   },
   "footer": {
     "tagline": "Kodin huoltokirja",

@@ -4,7 +4,7 @@ import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site } from './site.config.mjs';
-import { renderPage } from './src/template.mjs';
+import { renderPage, renderNotFound } from './src/template.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const dist = join(root, 'dist');
@@ -17,14 +17,14 @@ await cp(join(root, 'CNAME'), join(dist, 'CNAME')).catch(() => {});
 await cp(join(root, 'src/assets/favicon.ico'), join(dist, 'favicon.ico'));
 
 const enabled = Object.entries(site.locales).filter(([, l]) => l.enabled).map(([code]) => code);
-const urls = [];
+const today = new Date().toISOString().slice(0, 10);
 
 for (const code of enabled) {
   const t = JSON.parse(await readFile(join(root, `src/content/${code}.json`), 'utf8'));
   const html = renderPage({ t, code, site, enabled });
   await mkdir(join(dist, code), { recursive: true });
   await writeFile(join(dist, code, 'index.html'), html);
-  urls.push(`${site.origin}/${code}/`);
+  if (code === site.defaultLocale) await writeFile(join(dist, '404.html'), renderNotFound({ t, code, site }));
 }
 
 // Root: send visitors to the best enabled locale, default otherwise.
@@ -43,7 +43,7 @@ await writeFile(join(dist, 'index.html'), `<!doctype html>
 
 await writeFile(join(dist, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
-  enabled.map((c) => `<url><loc>${site.origin}/${c}/</loc>` +
+  enabled.map((c) => `<url><loc>${site.origin}/${c}/</loc><lastmod>${today}</lastmod>` +
     enabled.map((a) => `<xhtml:link rel="alternate" hreflang="${a}" href="${site.origin}/${a}/"/>`).join('') + `</url>`).join('\n') +
   `\n</urlset>\n`);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.origin}/sitemap.xml\n`);

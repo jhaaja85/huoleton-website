@@ -64,6 +64,31 @@ function story({ id, block, image, tone, reverse }) {
   </section>`;
 }
 
+function jsonLd(t, code, site, url) {
+  const logo = `${site.origin}/assets/logo-512.png`;
+  const app = {
+    '@type': 'SoftwareApplication',
+    '@id': `${site.origin}/#app`,
+    name: t.brand.name,
+    alternateName: `${t.brand.name} – ${t.brand.tagline}`,
+    description: t.meta.description,
+    applicationCategory: t.meta.appCategory,
+    operatingSystem: 'Android',
+    inLanguage: code,
+    url,
+    image: logo,
+    publisher: { '@id': `${site.origin}/#org` },
+  };
+  if (site.launched && site.links.googlePlay) app.installUrl = site.links.googlePlay;
+  const graph = [
+    { '@type': 'Organization', '@id': `${site.origin}/#org`, name: t.brand.name, url: site.origin + '/', logo },
+    { '@type': 'WebSite', '@id': `${site.origin}/#site`, url: site.origin + '/', name: t.brand.name, inLanguage: code, publisher: { '@id': `${site.origin}/#org` } },
+    app,
+  ];
+  // "<" is escaped so the JSON can never close the script tag.
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+}
+
 export function renderPage({ t, code, site, enabled }) {
   const url = `${site.origin}/${code}/`;
   const switcher = enabled.length > 1
@@ -91,7 +116,16 @@ ${alternates}
 <meta property="og:locale" content="${site.locales[code].ogLocale}">
 <meta property="og:image" content="${site.origin}/assets/og.jpg">
 <meta property="og:image:alt" content="${esc(t.meta.ogAlt)}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(t.meta.title)}">
+<meta name="twitter:description" content="${esc(t.meta.description)}">
+<meta name="twitter:image" content="${site.origin}/assets/og.jpg">
+<meta name="twitter:image:alt" content="${esc(t.meta.ogAlt)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">${jsonLd(t, code, site, url)}</script>
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="../assets/logo-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/logo-180.png">
@@ -240,6 +274,29 @@ ${site.analytics.gaId ? `<div class="consent" role="dialog" aria-labelledby="con
   </div>
 </div>
 <script src="../assets/consent.js" data-ga-id="${esc(site.analytics.gaId)}" defer></script>` : ''}
+</body>
+</html>
+`;
+}
+
+export function renderNotFound({ t, code, site }) {
+  return `<!doctype html>
+<html lang="${code}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(t.notFound.title)} – ${esc(t.brand.name)}</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="container" style="padding-block:96px;text-align:center">
+  <img src="/assets/logo-180.png" width="72" height="72" alt="" style="margin:0 auto 24px;border-radius:16px">
+  <h1 style="font-size:2.25rem">${esc(t.notFound.title)}</h1>
+  <p class="lead" style="margin:16px auto 28px">${esc(t.notFound.text)}</p>
+  <a class="btn" href="/${code}/">${esc(t.notFound.link)}</a>
+</main>
 </body>
 </html>
 `;
