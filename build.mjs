@@ -2,6 +2,7 @@
 // into dist/<locale>/index.html. No dependencies. Usage: node build.mjs
 import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { site } from './site.config.mjs';
 import { renderPage, renderNotFound } from './src/template.mjs';
@@ -15,6 +16,9 @@ await cp(join(root, 'src/assets'), join(dist, 'assets'), { recursive: true });
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'CNAME'), join(dist, 'CNAME')).catch(() => {});
 await cp(join(root, 'src/assets/favicon.ico'), join(dist, 'favicon.ico'));
+
+// Cache-busting token for CSS/JS so visitors never get a stale stylesheet after a deploy.
+site.assetVersion = createHash('md5').update(await readFile(join(root, 'src/styles.css'))).update(await readFile(join(root, 'src/assets/consent.js'))).digest('hex').slice(0, 8);
 
 const enabled = Object.entries(site.locales).filter(([, l]) => l.enabled).map(([code]) => code);
 const today = new Date().toISOString().slice(0, 10);

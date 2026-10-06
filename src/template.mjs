@@ -134,7 +134,7 @@ ${alternates}
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="../assets/logo-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/logo-180.png">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=${site.assetVersion}">
 </head>
 <body>
 <a class="skip" href="#main">${esc(t.nav.skip)}</a>
@@ -278,7 +278,7 @@ ${site.analytics.gaId ? `<div class="consent" role="dialog" aria-labelledby="con
     <button type="button" class="btn btn--small btn--ghost" data-consent="denied">${esc(t.consent.decline)}</button>
   </div>
 </div>
-<script src="../assets/consent.js" data-ga-id="${esc(site.analytics.gaId)}" defer></script>` : ''}
+<script src="../assets/consent.js?v=${site.assetVersion}" data-ga-id="${esc(site.analytics.gaId)}" defer></script>` : ''}
 </body>
 </html>
 `;
@@ -293,7 +293,7 @@ export function renderNotFound({ t, code, site }) {
 <title>${esc(t.notFound.title)} – ${esc(t.brand.name)}</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=${site.assetVersion}">
 </head>
 <body>
 <main class="container" style="padding-block:96px;text-align:center">

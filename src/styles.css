@@ -16,9 +16,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; background: var(--cream); color: var(--ink);
+  margin: 0; overflow-x: clip; background: var(--cream); color: var(--ink);
   font: 400 1.0625rem/1.65 var(--font);
   -webkit-font-smoothing: antialiased;
 }
@@ -41,7 +41,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(251, 248, 241, .94); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
 .site-header__row { display: flex; align-items: center; gap: 20px; height: 68px; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.brand { min-width: 0; flex-shrink: 0; display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
 .brand img { border-radius: 10px; }
 .brand__name { font-weight: 700; font-size: 1.25rem; letter-spacing: -.02em; color: var(--green); }
 .main-nav { display: none; gap: 28px; }
@@ -64,14 +64,20 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .store strong { display: block; font-size: 1.1875rem; font-weight: 600; letter-spacing: -.01em; }
 .note { font-size: .875rem; color: var(--ink-2); margin: 0; }
 
+@media (max-width: 639px) {
+  .site-header__row { gap: 10px; }
+  .site-header__row .btn--small { display: none; }
+  .lang a { padding: 4px 9px; }
+}
+
 /* Phone stages */
 .stage { border-radius: 28px; display: flex; justify-content: center; align-items: center; padding: 36px 20px; position: relative; }
 .stage--sand { background: var(--sand); }
 .stage--mint { background: var(--green-soft); }
 .phone { width: 100%; max-width: 280px; height: auto; filter: drop-shadow(0 22px 28px rgba(31, 36, 33, .2)); }
 
-.stage--duo { gap: 12px; }
-.stage--duo .phone { max-width: calc(50% - 6px); }
+.stage--duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.stage--duo .phone { width: 100%; max-width: none; min-width: 0; }
 
 /* Hero */
 .hero { padding: 44px 0 56px; }
