@@ -70,6 +70,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stage--mint { background: var(--green-soft); }
 .phone { width: 100%; max-width: 280px; height: auto; filter: drop-shadow(0 22px 28px rgba(31, 36, 33, .2)); }
 
+.stage--duo { gap: 12px; }
+.stage--duo .phone { max-width: calc(50% - 6px); }
+
 /* Hero */
 .hero { padding: 44px 0 56px; }
 .hero__grid { display: grid; gap: 40px; align-items: center; }

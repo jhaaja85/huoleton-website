@@ -45,11 +45,15 @@ function points(list) {
   return `<ul class="points">${list.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`;
 }
 
-function phone(name, w, h, alt, cls = '') {
-  return `<img class="phone ${cls}" src="../assets/${name}.webp" width="${w}" height="${h}" alt="${esc(alt)}" ${cls.includes('phone--') ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}>`;
+// Per-render context: locale code and image sizes (src/assets/<locale>/sizes.json).
+let ctx = { code: '', sizes: {} };
+
+function phone(name, alt, cls = '') {
+  const [w, h] = ctx.sizes[name];
+  return `<img class="phone ${cls}" src="../assets/${ctx.code}/${name}.webp" width="${w}" height="${h}" alt="${esc(alt)}" ${cls.includes('phone--') ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}>`;
 }
 
-function story({ id, block, image, tone, reverse }) {
+function story({ id, block, image, tone, reverse, duo }) {
   return `
   <section class="story ${reverse ? 'story--reverse' : ''}" ${id ? `id="${id}"` : ''}>
     <div class="container story__grid">
@@ -59,7 +63,7 @@ function story({ id, block, image, tone, reverse }) {
         ${block.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('')}
         ${points(block.points)}
       </div>
-      <div class="story__visual"><div class="stage stage--${tone}">${image}</div></div>
+      <div class="story__visual"><div class="stage stage--${tone} ${duo ? 'stage--duo' : ''}">${image}</div></div>
     </div>
   </section>`;
 }
@@ -89,7 +93,8 @@ function jsonLd(t, code, site, url) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 }
 
-export function renderPage({ t, code, site, enabled }) {
+export function renderPage({ t, code, site, enabled, sizes }) {
+  ctx = { code, sizes };
   const url = `${site.origin}/${code}/`;
   const switcher = enabled.length > 1
     ? `<nav class="lang" aria-label="${esc(t.nav.languageLabel)}">${enabled.map((c) =>
@@ -114,7 +119,7 @@ ${alternates}
 <meta property="og:description" content="${esc(t.meta.description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:locale" content="${site.locales[code].ogLocale}">
-<meta property="og:image" content="${site.origin}/assets/og.jpg">
+<meta property="og:image" content="${site.origin}/assets/og-${code}.jpg">
 <meta property="og:image:alt" content="${esc(t.meta.ogAlt)}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -122,7 +127,7 @@ ${alternates}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(t.meta.title)}">
 <meta name="twitter:description" content="${esc(t.meta.description)}">
-<meta name="twitter:image" content="${site.origin}/assets/og.jpg">
+<meta name="twitter:image" content="${site.origin}/assets/og-${code}.jpg">
 <meta name="twitter:image:alt" content="${esc(t.meta.ogAlt)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <script type="application/ld+json">${jsonLd(t, code, site, url)}</script>
@@ -161,7 +166,7 @@ ${alternates}
       </div>
       <div class="hero__visual">
         <div class="stage stage--sand hero__stage">
-          ${phone('app-koti', 598, 1239, t.hero.imageAlt, 'phone--front')}
+          ${phone('app-koti', t.hero.imageAlt, 'phone--front')}
         </div>
       </div>
     </div>
@@ -186,14 +191,14 @@ ${alternates}
           <div>${points(t.plan.points)}</div>
         </div>
       </div>
-      <img class="banner" src="../assets/feature.webp" width="1794" height="876" alt="${esc(t.plan.imageAlt)}" loading="lazy" decoding="async">
+      <img class="banner" src="../assets/${code}/feature.webp" width="${sizes.feature[0]}" height="${sizes.feature[1]}" alt="${esc(t.plan.imageAlt)}" loading="lazy" decoding="async">
     </div>
   </section>
 
-  ${story({ block: t.remind, tone: 'mint', reverse: true, image: phone('app-koti', 598, 1239, t.remind.imageAlt) })}
-  ${story({ block: t.record, tone: 'sand', image: phone('app-kuittaus', 813, 1627, t.record.imageAlt) })}
-  ${story({ block: t.track, tone: 'mint', reverse: true, image: phone('app-tilastot', 823, 1795, t.track.imageAlt) })}
-  ${story({ block: t.pts, tone: 'sand', image: phone('app-pts', 782, 1676, t.pts.imageAlt) })}
+  ${story({ block: t.remind, tone: 'mint', reverse: true, image: phone('app-koti', t.remind.imageAlt) })}
+  ${story({ block: t.record, tone: 'sand', image: phone('app-kuittaus', t.record.imageAlt) })}
+  ${story({ block: t.track, tone: 'mint', reverse: true, image: phone('app-mittaus', t.track.imageAlt) + phone('app-tilastot', t.track.imageAlt2), duo: true })}
+  ${story({ block: t.pts, tone: 'sand', image: phone('app-pts', t.pts.imageAlt) })}
 
   <section class="features" id="${t.features.id}">
     <div class="container">

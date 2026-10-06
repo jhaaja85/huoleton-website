@@ -1,7 +1,203 @@
 {
-  "_status": "Placeholder. English copy will be written separately; do not machine-translate fi.json. Same keys as fi.json. Enable the locale in site.config.mjs once complete.",
   "lang": "en",
-  "meta": { "title": "", "description": "", "ogAlt": "" },
-  "nav": { "label": "", "features": "", "why": "", "download": "", "languageLabel": "" },
-  "brand": { "name": "Huoleton", "tagline": "", "logoAlt": "" }
+  "meta": {
+    "title": "Huoleton – Home maintenance log and planner",
+    "description": "Huoleton tells you what your home needs and when. Maintenance plan, reminders, service history, costs and documents in one place.",
+    "ogAlt": "Huoleton – a home maintenance log on an Android phone",
+    "appCategory": "LifestyleApplication"
+  },
+  "nav": {
+    "label": "Main menu",
+    "skip": "Skip to content",
+    "features": "Features",
+    "why": "Why keep a log",
+    "download": "Download",
+    "languageLabel": "Language"
+  },
+  "brand": {
+    "name": "Huoleton",
+    "tagline": "Home maintenance log",
+    "logoAlt": "Huoleton app logo"
+  },
+  "stores": {
+    "googlePlay": {
+      "small": "Get it on",
+      "name": "Google Play",
+      "aria": "Get Huoleton on Google Play"
+    },
+    "appStore": {
+      "small": "Download on the",
+      "name": "App Store",
+      "aria": "Download Huoleton on the App Store"
+    },
+    "note": "For Android. Works without an account and without an internet connection."
+  },
+  "soon": {
+    "badge": "Coming soon",
+    "title": "Coming to Google Play in October",
+    "text": "Want to hear when it's out, or have a question?",
+    "contact": "Get in touch",
+    "navLabel": "Coming soon"
+  },
+  "consent": {
+    "title": "Cookies",
+    "text": "We use Google Analytics to understand how many people visit this site. Analytics is only switched on with your consent.",
+    "accept": "Accept",
+    "decline": "Necessary only",
+    "settings": "Cookie settings"
+  },
+  "hero": {
+    "eyebrow": "Home maintenance log",
+    "title": "Home maintenance, without the worry.",
+    "lead": "Huoleton tells you what your home needs and when. Maintenance tasks, reminders, costs and documents in one place.",
+    "imageAlt": "The Huoleton home screen: tasks due now, what is coming up and the full task list."
+  },
+  "steps": {
+    "title": "Plan, remember, document, track",
+    "items": [
+      { "n": "1", "name": "Plan", "text": "A maintenance plan built around your house." },
+      { "n": "2", "name": "Remember", "text": "Each task shows up when its time comes." },
+      { "n": "3", "name": "Document", "text": "Work done, cost, receipt and photos, all saved." },
+      { "n": "4", "name": "Track", "text": "Readings, costs and future expenses at a glance." }
+    ]
+  },
+  "plan": {
+    "step": "1 · Plan",
+    "title": "Your maintenance plan starts from your house",
+    "paragraphs": [
+      "Tell Huoleton the basics: year built, heating, ventilation and equipment. It picks the tasks that apply to your home from a ready-made catalogue.",
+      "Each task has a window, not just a single date. Gutters get cleaned in autumn once the leaves have fallen, not on a fixed day."
+    ],
+    "points": [
+      "A ready-made catalogue covering heating, ventilation, roof, foundation, plumbing and fire safety",
+      "Every task comes with a source reference, such as Motiva or fire safety law",
+      "Add your own tasks whenever you like"
+    ],
+    "imageAlt": "Huoleton app overview: the app logo, the name Huoleton, and the home screen on a phone in front of a house."
+  },
+  "remind": {
+    "step": "2 · Remember",
+    "title": "See what needs doing right now",
+    "paragraphs": [
+      "The home screen gathers what needs attention today, what is coming up and what is overdue.",
+      "Huoleton sends a notification in good time, and you choose what time of day it arrives."
+    ],
+    "points": [
+      "Due, upcoming and overdue tasks grouped separately",
+      "Filter the task list: 1 month, 6 months, 1 year, 5 years or all",
+      "Reminders work without an internet connection"
+    ],
+    "imageAlt": "The Huoleton home screen with tasks due now, coming-up tasks and time range filters."
+  },
+  "record": {
+    "step": "3 · Document",
+    "title": "Keep a record of the work you do",
+    "paragraphs": [
+      "When a task is done, mark it complete in a couple of taps. Note the date, whether you did it yourself or a professional did, the cost and any remarks.",
+      "Attach receipts, photos and PDFs. Everything stays in one place, right next to the task it belongs to."
+    ],
+    "points": [
+      "Date, who did the work, cost and notes",
+      "Attachments: receipts, photos and PDFs",
+      "Spot a mistake later? Add a correction. History is never rewritten"
+    ],
+    "imageAlt": "The Huoleton completion form: date done, self or professional, cost, note and attachments."
+  },
+  "track": {
+    "step": "4 · Track",
+    "title": "Readings and costs, side by side",
+    "paragraphs": [
+      "Follow recurring measurements, such as the water meter or underfloor heating pressure, and see how the values change over time.",
+      "The statistics show what maintenance has cost so far and where the money has gone."
+    ],
+    "points": [
+      "A measurement history for every value you track",
+      "Costs broken down by category",
+      "Actual and planned costs in the same chart"
+    ],
+    "imageAlt": "Huoleton water meter readings as a line chart, with the latest, lowest and highest values.",
+    "imageAlt2": "Huoleton statistics: yearly cost chart, cost by category and measurement history."
+  },
+  "pts": {
+    "step": "Long-term planning",
+    "title": "Know what upkeep will cost before the bill arrives",
+    "paragraphs": [
+      "The long-term plan lists upcoming maintenance that carries a cost, grouped by year: ventilation filters, chimney sweeping and other recurring expenses.",
+      "You see the longer-term picture well ahead of time. Only tasks that have a cost estimate are included."
+    ],
+    "points": [
+      "Upcoming maintenance by year, with a total for each year",
+      "See which years will cost more",
+      "Export the plan as a PDF",
+      "Free do-it-yourself jobs stay in the regular task list"
+    ],
+    "imageAlt": "The Huoleton long-term plan: upcoming maintenance with a cost, grouped by year, with yearly totals."
+  },
+  "features": {
+    "id": "features",
+    "title": "Everything for home maintenance in one app",
+    "items": [
+      { "icon": "calendar", "name": "Automatic maintenance plan", "text": "Huoleton helps you build a maintenance schedule for your home." },
+      { "icon": "bell", "name": "Reminders", "text": "Upcoming tasks surface at the right time." },
+      { "icon": "check", "name": "Keep a record", "text": "Log completed work, costs, notes and who did it." },
+      { "icon": "file", "name": "Documents in one place", "text": "Photos, receipts, PDFs and other maintenance paperwork." },
+      { "icon": "gauge", "name": "Measurement tracking", "text": "Water meter readings and heating system values over time." },
+      { "icon": "euro", "name": "Cost tracking and long-term plan", "text": "Actual costs and upcoming expenses in a single view." },
+      { "icon": "printer", "name": "Export your maintenance log", "text": "A service history for your own files, or for when you sell the house." }
+    ]
+  },
+  "why": {
+    "id": "why",
+    "eyebrow": "Why keep a log",
+    "title": "A well-kept home shows on paper too",
+    "lead": "A house needs care for as long as you own it. Knowing what has been done, and when, makes every decision easier.",
+    "items": [
+      { "name": "Small things don't slip", "text": "Filters, inspections and seasonal jobs get done before they turn into bigger problems." },
+      { "name": "You know what has been done", "text": "Who did it, when and at what cost. The answer is there even years later." },
+      { "name": "Warranties and receipts at hand", "text": "When you need a receipt or equipment details, they sit right next to the maintenance entry." },
+      { "name": "Selling is easier", "text": "A clear service history shows buyers that the home has been looked after. Print it or export it as a PDF." }
+    ]
+  },
+  "data": {
+    "title": "Your data stays with you",
+    "items": [
+      { "name": "No account needed", "text": "Start using the app straight away." },
+      { "name": "Works offline", "text": "Your data is stored on your phone." },
+      { "name": "Export everything", "text": "The whole log as a JSON file and a readable PDF report, any time." }
+    ]
+  },
+  "pro": {
+    "id": "pro",
+    "eyebrow": "Huoleton Pro",
+    "title": "For when you want the log in the cloud and the whole household on board",
+    "lead": "The basic app works without an account or a connection. Pro adds optional cloud storage, if you want a backup or use the app on more than one device.",
+    "items": [
+      { "icon": "cloud", "name": "Cloud backup", "text": "Your log is safe even if you change or lose your phone." },
+      { "icon": "devices", "name": "More than one device", "text": "The same log on your phone and your other devices." },
+      { "icon": "people", "name": "Shared household", "text": "Invite a family member with an invite code, and you both see the tasks and entries." },
+      { "icon": "lock", "name": "End-to-end encrypted", "text": "Your data is encrypted on your device before it is uploaded. We can't read it." }
+    ],
+    "note": "Pro is optional. Your log works, and can be exported, without it."
+  },
+  "cta": {
+    "id": "download",
+    "soonTitle": "Huoleton is coming soon",
+    "soonText": "The app launches on Google Play in October. Get in touch if you would like to hear as soon as it is available.",
+    "title": "Start your home's maintenance log today",
+    "text": "Download Huoleton and let the app keep track of what your home needs."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you were looking for doesn't exist or has moved.",
+    "link": "Back to the front page"
+  },
+  "footer": {
+    "tagline": "Home maintenance log",
+    "links": {
+      "privacy": "Privacy policy",
+      "deletion": "Data and account deletion",
+      "support": "Support and contact"
+    },
+    "copyright": "© 2026 Huoleton"
+  }
 }

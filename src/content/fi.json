@@ -115,7 +115,8 @@
       "Kustannukset jaoteltuina kategorioittain",
       "Toteutuneet ja suunnitellut kulut samassa kaaviossa"
     ],
-    "imageAlt": "Huoleton-sovelluksen tilastot: kustannuskaavio vuosittain, kustannukset kategorioittain ja mittaushistoria."
+    "imageAlt": "Huoleton-sovelluksen vesimittarin lukemat viivakaaviona: pienin ja suurin lukema sekä viimeisin mittaus.",
+    "imageAlt2": "Huoleton-sovelluksen tilastot: kustannuskaavio vuosittain, kustannukset kategorioittain ja mittaushistoria."
   },
   "pts": {
     "step": "Pitkän aikavälin suunnittelu",
@@ -127,6 +128,7 @@
     "points": [
       "Tulevat huollot vuosittain, vuosikohtainen summa",
       "Näet milloin vuosikohtaiset menot kasvavat",
+      "Vie suunnitelma PDF-tiedostona",
       "Ilmaiset omat työt löytyvät tavallisesta tehtävälistasta"
     ],
     "imageAlt": "Huoleton-sovelluksen PTS-suunnitelma: tulevat kustannukselliset huollot vuosittain ja vuosikohtaiset summat."

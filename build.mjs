@@ -21,7 +21,8 @@ const today = new Date().toISOString().slice(0, 10);
 
 for (const code of enabled) {
   const t = JSON.parse(await readFile(join(root, `src/content/${code}.json`), 'utf8'));
-  const html = renderPage({ t, code, site, enabled });
+  const sizes = JSON.parse(await readFile(join(root, `src/assets/${code}/sizes.json`), 'utf8'));
+  const html = renderPage({ t, code, site, enabled, sizes });
   await mkdir(join(dist, code), { recursive: true });
   await writeFile(join(dist, code, 'index.html'), html);
   if (code === site.defaultLocale) await writeFile(join(dist, '404.html'), renderNotFound({ t, code, site }));
