@@ -24,7 +24,11 @@ function storeButtons(t, site, extraClass = '') {
   const btn = (href, glyph, b) =>
     `<a class="store" href="${esc(href)}" aria-label="${esc(b.aria)}" rel="noopener">${glyph}<span><small>${esc(b.small)}</small><strong>${esc(b.name)}</strong></span></a>`;
   const out = [];
-  if (site.links.googlePlay) out.push(btn(site.links.googlePlay, playGlyph, s.googlePlay));
+  if (site.links.googlePlay) {
+    // hl selects the Play Store page language (browser only; the Play app follows the device language).
+    const url = site.links.googlePlay + (site.links.googlePlay.includes('?') ? '&' : '?') + 'hl=' + t.lang;
+    out.push(btn(url, playGlyph, s.googlePlay));
+  }
   // Rendered only when an App Store link is configured in site.config.mjs.
   if (site.links.appStore) out.push(btn(site.links.appStore, appleGlyph, s.appStore));
   return `<div class="stores ${extraClass}">${out.join('')}</div>`;
