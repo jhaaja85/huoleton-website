@@ -3,7 +3,7 @@ export const site = {
   origin: 'https://huoleton.org',
   defaultLocale: 'fi',
   // false: store buttons are replaced with a "coming soon" notice. Set true on release day.
-  launched: false,
+  launched: true,
   // Google Analytics 4 measurement ID (G-XXXXXXXXXX). null = no analytics and no cookie banner.
   analytics: { gaId: 'G-SJ40J76138' },
   // Add a locale here and enable it once src/content/<code>.json is complete.
